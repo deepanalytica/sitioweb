@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Build PDF with Pandoc + LaTeX
         uses: docker://pandoc/latex:3.1
@@ -32,7 +34,7 @@ jobs:
             -o labs/inverse-reality-lab/paper/inverse-causal-construction-v0.1.pdf
             labs/inverse-reality-lab/paper/inverse-causal-construction-v0.1.md
 
-      - name: Commit generated PDF
+      - name: Commit generated PDF safely
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
@@ -40,5 +42,6 @@ jobs:
           git add labs/inverse-reality-lab/paper/inverse-causal-construction-v0.1.pdf
           if ! git diff --cached --quiet; then
             git commit -m "Build Inverse Causal Construction preprint PDF"
-            git push
+            git pull --rebase origin main
+            git push origin main
           fi
