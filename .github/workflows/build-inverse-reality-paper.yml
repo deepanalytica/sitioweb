@@ -3,8 +3,8 @@ name: Build Inverse Reality Lab paper
 on:
   push:
     paths:
-      - 'labs/inverse-reality-lab/paper/inverse-causal-construction-v0.1.tex'
-      - '.github/workflows/build-inverse-reality-paper.yml'
+      - 'labs/inverse-reality-lab/paper/inverse-causal-construction-v0.1.md'
+      - 'labs/inverse-reality-lab/paper/references.bib'
   workflow_dispatch:
 
 permissions:
@@ -17,12 +17,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Compile LaTeX paper
-        uses: xu-cheng/latex-action@v3
+      - name: Build PDF with Pandoc + LaTeX
+        uses: docker://pandoc/latex:3.1
         with:
-          root_file: inverse-causal-construction-v0.1.tex
-          working_directory: labs/inverse-reality-lab/paper
-          latexmk_use_xelatex: false
+          args: >-
+            --from=markdown+tex_math_dollars
+            --pdf-engine=xelatex
+            --citeproc
+            --bibliography=labs/inverse-reality-lab/paper/references.bib
+            -V geometry:margin=1in
+            -V colorlinks=true
+            -V linkcolor=blue
+            -V urlcolor=blue
+            -o labs/inverse-reality-lab/paper/inverse-causal-construction-v0.1.pdf
+            labs/inverse-reality-lab/paper/inverse-causal-construction-v0.1.md
 
       - name: Commit generated PDF
         shell: bash
