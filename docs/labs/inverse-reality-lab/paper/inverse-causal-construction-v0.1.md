@@ -538,5 +538,4 @@ contacto@deepanalytica.cl
 https://deepanalytica.cl/labs/inverse-reality-lab/  
 https://github.com/deepanalytica
 
-
-<!-- build-trigger: 2026-09-26-v0.1 -->
+<!-- build-trigger: 2026-09-26-v0.1-r2 -->
