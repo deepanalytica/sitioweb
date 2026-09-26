@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+title: "Inverse Reality Lab: Inverse Causal Construction and Chrono-Topological Reconstruction"
+message: "If you use this framework or laboratory, please cite this repository and the working paper."
+type: software
+authors:
+  - name: "Deep Analytica Research"
+version: 0.1.0
+date-released: 2026-09-26
+url: "https://deepanalytica.cl/labs/inverse-reality-lab/"
+repository-code: "https://github.com/deepanalytica/sitioweb/tree/main/labs/inverse-reality-lab"
+keywords:
+  - Egyptology
+  - computational archaeology
+  - Khufu
+  - Great Pyramid of Giza
+  - inverse problems
+  - causal inference
+  - construction sequencing
+  - persistent homology
+  - muography
+  - heritage science
+contact:
+  - email: "contacto@deepanalytica.cl"
