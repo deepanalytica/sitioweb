@@ -1,0 +1,25 @@
+{
+  "status": "research anchors; not a complete authoritative survey",
+  "updated": "2026-09-26",
+  "terminal_geometry": {
+    "original_height_m": 146.6,
+    "base_width_m": 230.4,
+    "ideal_volume_m3": 2590000,
+    "source": "AERA quarry comparison and modern survey syntheses"
+  },
+  "king_chamber": {
+    "length_m": 10.5,
+    "width_m": 5.2,
+    "height_m": 5.8,
+    "material": "red Aswan granite surfaces",
+    "source_doi": "10.1038/s41598-026-48805-8"
+  },
+  "scanpyramids": {
+    "big_void_min_length_m": 30,
+    "big_void_source_doi": "10.1038/nature24647",
+    "north_face_corridor_length_m": 9,
+    "north_face_corridor_section_m": [2.0, 2.0],
+    "north_face_corridor_source_doi": "10.1038/s41467-023-36351-0"
+  },
+  "material_density_note": "The lab uses an adjustable reference-density model. Published bulk densities vary by lithology, porosity and weathering; do not interpret a single reference value as a measured density field."
+}
